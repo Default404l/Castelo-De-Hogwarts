@@ -1,0 +1,443 @@
+/* Configurações Globais */
+:root {
+    --cor-pergaminho: #f4f1ea;
+    --cor-pedra: #2c2c2c;
+    --cor-ouro: #C5B358;
+    --fonte-titulos: 'Cinzel', serif;
+    --fonte-texto: 'Playfair Display', serif;
+}
+
+.texto-construcao {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 25px;
+    color: #000000;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.texto-construcao p {
+    margin-bottom: 28px;
+    font-size: 1.15rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: var(--cor-pergaminho);
+    color: var(--cor-pedra);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulos);
+}
+
+/* Menu de Navegação */
+#navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(244, 241, 234, 0.95);
+    border-bottom: 1px solid #dcd7c9;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--cor-pedra);
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--cor-ouro);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--cor-ouro);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-mobile {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-pedra);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(28, 25, 23, 0.6);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #e5e5e5;
+    font-style: italic;
+}
+
+/* Seção Sobre */
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.tag {
+    color: var(--cor-ouro);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.sobre-texto h3 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+.sobre-texto p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+}
+
+.moldura-imagem {
+    border: 8px solid #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.moldura-imagem:hover {
+    transform: scale(1.02);
+}
+
+.moldura-imagem img {
+    width: 100%;
+    display: block;
+}
+
+/* Citação */
+.citacao-section {
+    background-color: #e8e4db;
+    padding: 4rem 2rem;
+    border-top: 1px solid #dcd7c9;
+    border-bottom: 1px solid #dcd7c9;
+}
+
+.citacao-caixa {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 3rem;
+    text-align: center;
+    border: 1px solid #dcd7c9;
+    border-radius: 4px;
+}
+
+.citacao-caixa p {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #333;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsividade (Mobile) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-pergaminho);
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links a {
+        margin: 1rem 0;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animações Iniciais */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   ESTILOS DA PÁGINA DE FOTOS (GALERIA)
+   ========================================= */
+
+.galeria-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.texto-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    font-style: italic;
+}
+
+/* Criação do Grid Responsivo para os Cards */
+.galeria-grid {
+    display: grid;
+    /* Ajusta automaticamente a quantidade de colunas dependendo do tamanho da tela */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+/* Estilo do Cartão */
+.galeria-card {
+    background-color: #fff;
+    border: 1px solid #dcd7c9;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efeito ao passar o mouse no cartão */
+.galeria-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-img {
+    height: 280px;
+    overflow: hidden; /* Mantém o zoom da imagem contido no card */
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Zoom suave na imagem ao passar o mouse */
+.galeria-card:hover .card-img img {
+    transform: scale(1.08);
+}
+
+.card-conteudo {
+    padding: 2.5rem 2rem;
+}
+
+.card-conteudo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-pedra);
+}
+
+.card-conteudo .tag {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+}
+
+.card-conteudo p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   ESTILOS DA PÁGINA DE RELATO (LEGADO)
+   ========================================= */
+
+.relato-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.artigo-texto {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.artigo-texto p {
+    margin-bottom: 2rem;
+}
+
+/* Letra Capitular (Estilo de livro antigo) */
+.drop-cap {
+    float: left;
+    font-size: 5rem;
+    line-height: 0.8;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: var(--fonte-titulos);
+    color: var(--cor-ouro);
+}
+
+/* Destaque de Citação no meio do texto */
+.citacao-destaque {
+    font-family: var(--fonte-titulos);
+    font-size: 1.6rem;
+    color: var(--cor-pedra);
+    margin: 3rem 0;
+    padding: 2rem;
+    border-left: 4px solid var(--cor-ouro);
+    background-color: rgba(197, 179, 88, 0.1);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Informações do Autor/Projeto no final do relato */
+.autor-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #dcd7c9;
+}
+
+.selo-projeto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--cor-ouro);
+    object-fit: cover;
+}
+
+.autor-info h4 {
+    font-family: var(--fonte-titulos);
+    margin-bottom: 0.3rem;
+}
+
+.autor-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Ajustes Responsivos para o Relato */
+@media (max-width: 768px) {
+    .drop-cap {
+        font-size: 4rem;
+    }
+    .citacao-destaque {
+        font-size: 1.3rem;
+        padding: 1.5rem;
+    }
+}
